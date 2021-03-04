@@ -5,7 +5,7 @@ Create an employee roster and updates using node. This is the first time that I'
 This application utilizes Node.js and inquirer to update the database as well as display the udpated results. NPM, inquirer, and mysql are required to run these files. It involves multiple routings and utilizes get and post routes.
 
 ### Here is the final product:
-![Daily Scheduler](https://github.com/zdjeffers/Daily-Planner/blob/main/Assets/daily-scheduler.png)
+![Daily Scheduler](https://github.com/zdjeffers/Employee_tracking/blob/main/Instructions/Assets/Tracker-Demo.gif)
 
 
 
