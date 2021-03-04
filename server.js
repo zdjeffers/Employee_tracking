@@ -103,14 +103,14 @@ function addDepartment() {
         console.log(res)
         let department_name = res.name;
         createDepartment(department_name)
-        .then(console.log("New Department created"))
-        .then(()=> mainMenu());
+        console.log("New Department created")
+        mainMenu();
     })
 }
 // this function actually creates the new dept after the user adds it
 function createDepartment( department_name ) {
     console.log( "Department Name: ", department_name );
-    return connection.promise().query('INSERT INTO department SET ?', {name: department_name},
+    return connection.query('INSERT INTO department SET ?', {name: department_name},
     (err, res) => {
         if(err) throw err;
         console.table(res);
@@ -149,13 +149,13 @@ function addEmployee() {
     .then((res) => {
         console.log(res)
         createEmployee(res)
-        .then(console.log("employee added"))
-        .then(() => mainMenu());
+        console.log("employee added")
+        mainMenu();
     });
 };
 // this function actually creates the new employee after the user adds it
 function createEmployee(res) {
-    return connection.promise().query('INSERT INTO employee SET ?',
+    return connection.query('INSERT INTO employee SET ?',
     {first_name: res.first_name, last_name: res.last_name, role_id: res.role_id, manager_id: res.manager_id, department_id: res.department_id},
     (err, res) => {
         if(err) throw err;
@@ -179,13 +179,13 @@ function updateRole() {
     ])
     .then( data => {
         createRole(data)
-        .then( console.log("Employee Role Updated") )
-        .then( ()=> mainMenu() );
+        console.log("Employee Role Updated")
+        mainMenu();
     });
 };
 // this function actually creates the new role after the user adds it
 function createRole(data) {   
-    return connection.promise().query(
+    return connection.query(
         'UPDATE employee SET role_id = ? WHERE id = ? ', 
         [data.role_id,  data.id],                   
             (err, res) => {
